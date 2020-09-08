@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <DV_TABLE_CREATION>
+        <!--列数-->
+        <COL_NUM col="F"/>
+        <!--模式前缀-->
+        <DES_SCHEMA_PREFIX value="DW_FREE" />
+        <!--模式后缀-->
+        <DES_SCHEMA_SUBFIX col="I" />
+        <!--表名-->
+        <DES_TABLE_NAME col="B" />
+        <!--表代码-->
+        <DES_TABLE_CODE col="A" />
+        <!--表注释-->
+        <!--<DES_TABLE_COMMENT col="B" />-->
+        <!--属性名-->
+        <DES_COL_NAME col="D" />
+        <!--属性代码-->
+        <DES_COL_CODE col="C" />
+        <!--属性类型-->
+        <DES_COL_TYPE col="E" />
+        <!--属性注释-->
+        <DES_COL_COMMENT col="D" />
+        <!--是否主键-->
+        <DES_IS_PRIMARY col="F" />
+    </DV_TABLE_CREATION>
+    <DM_TABLE_CREATION>
+        <!--列数-->
+        <COL_NUM col="J"/>
+        <!--模式前缀-->
+        <DES_SCHEMA_PREFIX value="DW" />
+        <!--模式后缀-->
+        <DES_SCHEMA_SUBFIX col="B" />
+        <!--表名-->
+        <DES_TABLE_NAME col="C" />
+        <!--表代码-->
+        <DES_TABLE_CODE col="E" />
+        <!--表注释-->
+        <DES_TABLE_COMMENT col="D" />
+        <!--属性名-->
+        <DES_COL_NAME col="F" />
+        <!--属性代码-->
+        <DES_COL_CODE col="G" />
+        <!--属性类型-->
+        <DES_COL_TYPE col="J" />
+        <!--是否主键-->
+        <DES_IS_PRIMARY col="H" />
+    </DM_TABLE_CREATION>
+    <CHECK_CDM_EXCEL>
+        <!--列数-->
+        <COL_NUM col="O"/>
+        <!--域-->
+        <SRC_DOMAIN col="B" />
+        <!--源表名-->
+        <SRC_TABLE_NAME col="C" />
+        <!--源表代码-->
+        <SRC_TABLE_CODE col="D" />
+        <!--源表属性名-->
+        <SRC_COL_NAME col="E" />
+        <!--源表属性代码-->
+        <SRC_COL_CODE col="F" />
+        <!--源表属性类型-->
+        <!--<SRC_COL_TYPE col="N" />-->
+        <!--映射关系-->
+        <MAP_SRC_DES col="G" />
+        <!--目标表名-->
+        <DES_TABLE_NAME col="H" />
+        <!--目标表代码-->
+        <DES_TABLE_CODE col="I" />
+        <!--目标列名称-->
+        <DES_COL_NAME col="J" />
+        <!--目标列代码-->
+        <DES_COL_CODE col="K" />
+        <!--目标列类型-->
+        <DES_COL_TYPE col="L" />
+        <!--目标列注释-->
+        <DES_COL_COMMENT col="O" />
+    </CHECK_CDM_EXCEL>
+    <ETL_ODS_DV>
+        <!--列数-->
+        <COL_NUM col="O"/>
+        <!--域-->
+        <SRC_DOMAIN col="B" />
+        <!--源表名-->
+        <SRC_TABLE_NAME col="C" />
+        <!--源表代码-->
+        <SRC_TABLE_CODE col="D" />
+        <!--源表属性名-->
+        <SRC_COL_NAME col="E" />
+        <!--源表属性代码-->
+        <SRC_COL_CODE col="F" />
+        <!--源表属性类型-->
+        <!--<SRC_COL_TYPE col="N" />-->
+        <!--转换规则-->
+        <MAP_SRC_DES col="G" />
+        <!--目标表名-->
+        <DES_TABLE_NAME col="H" />
+        <!--目标表代码-->
+        <DES_TABLE_CODE col="I" />
+        <!--目标列名称-->
+        <DES_COL_NAME col="J" />
+        <!--目标列代码-->
+        <DES_COL_CODE col="K" />
+        <!--目标列类型-->
+        <DES_COL_TYPE col="L" />
+        <!--目标列注释-->
+        <DES_COL_COMMENT col="O" />
+    </ETL_ODS_DV>
+    <ETL_ODS_DV_FREE>
+        <!--列数-->
+        <COL_NUM col="O"/>
+        <!--域-->
+        <SRC_DOMAIN col="B" />
+        <!--源表名-->
+        <SRC_TABLE_NAME col="D" />
+        <!--源表代码-->
+        <SRC_TABLE_CODE col="C" />
+        <!--源表属性名-->
+        <SRC_COL_NAME col="E" />
+        <!--源表属性代码-->
+        <SRC_COL_CODE col="F" />
+        <!--源表属性类型-->
+        <!--<SRC_COL_TYPE col="N" />-->
+        <!--转换规则-->
+        <MAP_SRC_DES col="H" />
+        <!--目标表名-->
+        <DES_TABLE_NAME col="K" />
+        <!--目标表代码-->
+        <DES_TABLE_CODE col="J" />
+        <!--目标列名称-->
+        <DES_COL_NAME col="L" />
+        <!--目标列代码-->
+        <DES_COL_CODE col="M" />
+        <!--目标列类型-->
+        <DES_COL_TYPE col="N" />
+        <!--目标列是否主键-->
+        <DES_IS_PRIMARY col="O" />
+    </ETL_ODS_DV_FREE>
+</config>
