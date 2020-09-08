@@ -16,13 +16,9 @@ import org.apache.hadoop.hive.ql.exec.UDFArgumentLengthException;
 import org.apache.hadoop.hive.ql.exec.UDFArgumentTypeException;
 import org.apache.hadoop.hive.ql.metadata.HiveException;
 import org.apache.hadoop.hive.ql.udf.generic.GenericUDF;
-import org.apache.hadoop.hive.serde.serdeConstants;
-import org.apache.hadoop.hive.serde2.io.HiveDecimalWritable;
-import org.apache.hadoop.hive.serde2.objectinspector.ListObjectInspector;
 import org.apache.hadoop.hive.serde2.objectinspector.ObjectInspector;
 import org.apache.hadoop.hive.serde2.objectinspector.PrimitiveObjectInspector;
 import org.apache.hadoop.hive.serde2.objectinspector.ObjectInspector.Category;
-import org.apache.hadoop.hive.serde2.objectinspector.PrimitiveObjectInspector.PrimitiveCategory;
 import org.apache.hadoop.hive.serde2.objectinspector.primitive.PrimitiveObjectInspectorFactory;
 import org.apache.hadoop.hive.serde2.objectinspector.primitive.PrimitiveObjectInspectorUtils;
 import org.apache.hadoop.hive.serde2.objectinspector.primitive.PrimitiveObjectInspectorUtils.PrimitiveGrouping;
@@ -44,7 +40,7 @@ import org.apache.hadoop.io.IntWritable;
  * 2020-05-07     tolstoy           v1.0.0               初始化
  */
 @Description(
-			name		=	"interval_SeqNo", 
+			name		=	"interval_no", 
 			value		=	"_FUNC_(N,N1,N2,N3,...)" +
 							"Returns 0 if N < N1, 1 if N < N2 and so on or -1 if N is NULL. All arguments are treated as integers. " +
 							"It is required that N1 < N2 < N3 < ... < Nn for this function to work correctly. ", 
@@ -159,7 +155,7 @@ public class GenericUDFInterVal extends GenericUDF {
 		}
 		double N = PrimitiveObjectInspectorUtils.getDouble(arguments[0].get(), (PrimitiveObjectInspector) argumentOIs[0]);
 
-		int interval_SeqNo = 0;
+		int interval_no = 0;
 
 		for (int i = 1; i < arguments.length; i++) {
 
@@ -167,10 +163,10 @@ public class GenericUDFInterVal extends GenericUDF {
 					(PrimitiveObjectInspector) argumentOIs[i])) {
 				break;
 			} else {
-				interval_SeqNo++;
+				interval_no++;
 			}
 		}
-		r.set(interval_SeqNo);
+		r.set(interval_no);
 		return  r ;
 	}
 
