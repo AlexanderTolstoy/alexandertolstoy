@@ -54,6 +54,8 @@ public class GenericUDFInterVal extends GenericUDF {
 
 	private transient ObjectInspector[] argumentOIs;
 	
+	private final IntWritable r = new IntWritable();
+
 	/**
 	 * 
 	 * @Title: isIntegerType
@@ -116,25 +118,6 @@ public class GenericUDFInterVal extends GenericUDF {
 	}
 
 	/*
-	 * (非 Javadoc) <p>Title: getDisplayString</p> <p>Description: </p>
-	 * 
-	 * @param String[] children
-	 * 
-	 * @return
-	 * 
-	 * @see
-	 * org.apache.hadoop.hive.ql.udf.generic.GenericUDF#getDisplayString(java.lang.
-	 * String[])
-	 */
-	@Override
-	public String getDisplayString(String[] children) {
-		assert (children.length >= 2);
-		return getStandardDisplayString("intervale()", children);
-	}
-
-
-	private final IntWritable r = new IntWritable();
-	/*
 	 * (非 Javadoc) <p>Title: evaluate</p> <p>Description: </p>
 	 * 
 	 * @param DeferredObject[] arguments
@@ -149,16 +132,16 @@ public class GenericUDFInterVal extends GenericUDF {
 	 */
 	@Override
 	public Object evaluate(DeferredObject[] arguments) throws HiveException {
-
+	
 		if (arguments[0].get() == null) {
 			return null;
 		}
 		double N = PrimitiveObjectInspectorUtils.getDouble(arguments[0].get(), (PrimitiveObjectInspector) argumentOIs[0]);
-
+	
 		int interval_no = 0;
-
+	
 		for (int i = 1; i < arguments.length; i++) {
-
+	
 			if (N < PrimitiveObjectInspectorUtils.getDouble(arguments[i].get(),
 					(PrimitiveObjectInspector) argumentOIs[i])) {
 				break;
@@ -168,6 +151,23 @@ public class GenericUDFInterVal extends GenericUDF {
 		}
 		r.set(interval_no);
 		return  r ;
+	}
+
+	/*
+	 * (非 Javadoc) <p>Title: getDisplayString</p> <p>Description: </p>
+	 * 
+	 * @param String[] children
+	 * 
+	 * @return
+	 * 
+	 * @see
+	 * org.apache.hadoop.hive.ql.udf.generic.GenericUDF#getDisplayString(java.lang.
+	 * String[])
+	 */
+	@Override
+	public String getDisplayString(String[] children) {
+		assert (children.length >= 2);
+		return getStandardDisplayString("intervale()", children);
 	}
 
 }
