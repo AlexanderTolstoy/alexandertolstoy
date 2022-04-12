@@ -9,7 +9,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<hadoop.version>3.0.0-cdh6.2.1</hadoop.version>
+		<hadoop.version>3.2.3</hadoop.version>
 		<hive.version>2.1.1-cdh6.2.1</hive.version>
 	</properties>
 	
